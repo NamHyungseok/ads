@@ -3,19 +3,23 @@
 }
 * {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 200;
   letter-spacing: -0.5px;
+}
+.bot_header {
+  height: 4rem !important;
 }
 .bot_header.ui.menu .item > img:not(.ui) {
   width: 1.8rem;
 }
 .bot_wrap {
-  margin-top: 3rem;
+  margin-top: 4rem !important;
   overflow: hidden;
-  min-height: calc(100vh - 3rem);
+  min-height: calc(100vh - 4rem);
 }
 .bot_wrap #map {
   width: 100%;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 4rem);
 }
 .bot_footer {
   margin-top: 0 !important;

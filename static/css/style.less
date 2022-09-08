@@ -2,17 +2,19 @@
 
 * {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 200;
   letter-spacing: -0.5px;
 }
 
 .bot_header {
+  height: @header !important;
   &.ui.menu .item > img:not(.ui) {
     width: 1.8rem;
   }
 }
 
 .bot_wrap {
-  margin-top: @header;
+  margin-top: @header !important;
   overflow: hidden;
   min-height: ~"calc(100vh - @{header})";
   #map {
