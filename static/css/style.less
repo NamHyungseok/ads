@@ -1,0 +1,26 @@
+@import "variable";
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.bot_header {
+  &.ui.menu .item > img:not(.ui) {
+    width: 1.8rem;
+  }
+}
+
+.bot_wrap {
+  margin-top: @header;
+  overflow: hidden;
+  min-height: ~"calc(100vh - @{header})";
+  #map {
+    width: 100%;
+    height: ~"calc(100vh - @{header})";
+  }
+}
+
+.bot_footer {
+  margin-top: 0 !important;
+}

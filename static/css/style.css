@@ -1,0 +1,20 @@
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
+}
+.bot_header.ui.menu .item > img:not(.ui) {
+  width: 1.8rem;
+}
+.bot_wrap {
+  margin-top: 3rem;
+  overflow: hidden;
+  min-height: calc(100vh - 3rem);
+}
+.bot_wrap #map {
+  width: 100%;
+  height: calc(100vh - 3rem);
+}
+.bot_footer {
+  margin-top: 0 !important;
+}
+/*# sourceMappingURL=style.css.map */
