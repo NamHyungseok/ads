@@ -1,3 +1,6 @@
+.type_upper {
+  text-transform: capitalize !important;
+}
 * {
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing: -0.5px;
