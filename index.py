@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 matters = [
     'ethen_ethane',
-    'propane'
+    'propane',
+    'propene'
 ]
 
 

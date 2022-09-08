@@ -54,11 +54,13 @@
             {% if matters %}
                 <div class="ui simple dropdown item">
                     오염물질
+                    <span class="ui red label">
                     {% if id %}
                         {{ matters[id - 1] }}
                     {% else %}
                         ethen_ethane
                     {% endif %}
+                    </span>
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         {% for matter in matters %}
