@@ -10,70 +10,77 @@
 
         <!-- Site Properties -->
         <title>환경감시 대기배출시설 분석 시스템</title>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500&display=swap"
-              rel="stylesheet">
-        <!-- Semantic UI -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
-        <script
-                src="https://code.jquery.com/jquery-3.1.1.min.js"
-                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-                crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        {#        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500&display=swap"#}
+        {#              rel="stylesheet">#}
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>
 
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/media.css') }}"/>
-
-        <style type="text/css">
-            body {
-                background-color: #FFFFFF;
-            }
-
-            .ui.menu .item img.logo {
-                margin-right: 1.5em;
-            }
-
-            .main.container {
-                margin-top: 7em;
-            }
-
-            .ui.footer.segment {
-                margin: 5em 0em 0em;
-                padding: 5em 0em;
-            }
-        </style>
     </head>
 {% endblock %}
 <body>
 {% block header %}
-    <div class="ui fixed inverted menu bot_header">
-        <div class="ui container">
-            <a href="/" class="header item">
-                <img class="logo" src="{{ url_for('static', filename='/img/robot.svg') }}">
-                환경감시 대기배출시설 분석 시스템
-            </a>
-            {% if matters %}
-                <div class="ui simple dropdown item">
-                    오염물질
-                    <span class="ui red label type_upper">
-                    {% if id %}
-                        {{ matters[id - 1] }}
-                    {% else %}
-                        ethen_ethane
-                    {% endif %}
-                    </span>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        {% for matter in matters %}
-                            <a class="item" href="/matter/{{ loop.index }}">{{ matter }}</a>
-                        {% endfor %}
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand type_bot" href="#">환경감시 대기배출시설 분석 시스템</a>
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a
+                                    class="nav-link dropdown-toggle type_bot ripple"
+                                    data-mdb-ripple-color="primary"
+                                    href="#"
+                                    id="navbarDropdownMenuLink"
+                                    role="button"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                오염물질
+                                <button type="button" class="btn btn-dark btn-rounded">
+                                    {% if id %}
+                                        {{ matters[id - 1] }}
+                                    {% else %}
+                                        ethen_ethane
+                                    {% endif %}
+                                </button>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                {% for matter in matters %}
+                                    <li>
+                                        <a class="dropdown-item ripple" data-mdb-ripple-color="primary" href="/matter/{{ loop.index }}">{{ matter }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center mg_left">
+                        <a href="http://ecodata.co.kr/" target="_blank" class="bot_logo ripple"></a>
                     </div>
                 </div>
-            {% endif %}
-        </div>
-        <div class="right menu">
-            <a class="item" href="http://ecodata.co.kr/" target="_blank">ⓒ 2022 Ecodata.</a>
-        </div>
-    </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </header>
 {% endblock %}
 
 {% block content %}
@@ -86,8 +93,17 @@
 </body>
 
 {% block footer %}
-<script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAot1lWRD4LmXc-Aqo3xpJRYGavMt7ZXxg&libraries=visualization&callback=initMap">
-</script>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+    ></script>
+    <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAot1lWRD4LmXc-Aqo3xpJRYGavMt7ZXxg&libraries=visualization&callback=initMap">
+    </script>
 {% endblock %}
 </html>

@@ -1,16 +1,37 @@
 @import "variable";
 
 * {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.5px;
 }
 
-.bot_header {
-  height: @header !important;
-  &.ui.menu .item > img:not(.ui) {
-    width: 1.8rem;
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link.type_bot {
+  display: flex;
+  align-items: center;
+  .btn {
+    margin-left: 0.7rem;
   }
+  & ~ .dropdown-menu {
+    width: 13rem;
+  }
+}
+
+.navbar-brand.type_bot {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bot_logo {
+  background: url("../img/icon_eco.svg") 50% 50% no-repeat;
+  width: 7.5rem;
+  height: 2rem;
+  background-size: contain;
+  display: flex;
 }
 
 .bot_wrap {

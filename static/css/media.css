@@ -1,0 +1,11 @@
+@media only screen and (max-width: 719px) {
+  .bot_wrap {
+    margin-top: 3.5rem !important;
+    min-height: calc(100vh - 3.5rem);
+  }
+  .bot_wrap #map {
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+  }
+}
+/*# sourceMappingURL=media.css.map */

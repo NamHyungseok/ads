@@ -1,25 +1,47 @@
 .type_upper {
   text-transform: capitalize !important;
 }
+.mg_left {
+  margin-left: auto;
+}
 * {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: -0.5px;
 }
-.bot_header {
-  height: 4rem !important;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
-.bot_header.ui.menu .item > img:not(.ui) {
-  width: 1.8rem;
+.nav-link.type_bot {
+  display: flex;
+  align-items: center;
+}
+.nav-link.type_bot .btn {
+  margin-left: 0.7rem;
+}
+.nav-link.type_bot ~ .dropdown-menu {
+  width: 13rem;
+}
+.navbar-brand.type_bot {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.bot_logo {
+  background: url("../img/icon_eco.svg") 50% 50% no-repeat;
+  width: 7.5rem;
+  height: 2rem;
+  background-size: contain;
+  display: flex;
 }
 .bot_wrap {
-  margin-top: 4rem !important;
+  margin-top: 4.3rem !important;
   overflow: hidden;
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4.3rem);
 }
 .bot_wrap #map {
   width: 100%;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 4.3rem);
 }
 .bot_footer {
   margin-top: 0 !important;
